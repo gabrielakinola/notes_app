@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": " nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/gabrielakinola/notes_app/issues"
   },
-  "homepage": "https://github.com/gabrielakinola/notes_app#readme"
+  "homepage": "https://github.com/gabrielakinola/notes_app#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }
