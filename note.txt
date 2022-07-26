@@ -1,2 +1,18 @@
 My name is Gabriel
-I am 23 years old
+I am 23 years old?
+
+//One Method
+// yargs(hideBin(process.argv))
+//   .command("add", "add a new notes", () => {
+//     console.log("ADDING NEW NOTES");
+//   })
+
+//   .parse();
+
+//create add method
+// yargs.command("add", {
+//   describe: "Add a new note",
+//   handler: () => {
+//     console.log("Adding a new note!");
+//   },
+// });
