@@ -51,11 +51,18 @@ yargs(hideBin(process.argv))
   )
   .parse();
 
-// yargs(hideBin(process.argv))
-//   .command("remove", "Remove a note", () => {
-//     console.log("Removing a note");
-//   })
-//   .parse();
+yargs(hideBin(process.argv))
+  .command(
+    "remove",
+    "Remove a note",
+    {
+      title: { describe: "Note title", demandOption: true, type: "string" },
+    },
+    (argv) => {
+      notes.removeNotes(argv.title);
+    }
+  )
+  .parse();
 
 // yargs(hideBin(process.argv)).command("list", "List your note", () => {
 //   console.log("Listing out all notes");
