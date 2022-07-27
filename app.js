@@ -2,9 +2,7 @@ const yargs = require("yargs/yargs");
 const { hideBin } = require("yargs/helpers");
 const chalk = require("chalk");
 const fs = require("fs");
-const { argv } = require("process");
-const getNotes = require("./notes");
-const { demandCommand, describe } = require("yargs");
+const notes = require("./notes");
 
 //fs.writeFileSync("note.txt", "My name is Gabriel");
 
@@ -48,7 +46,7 @@ yargs(hideBin(process.argv))
       },
     },
     (argv) => {
-      console.log(`Title: ${argv.title} \nBody: ${argv.body}\n`, argv);
+      notes.addNotes(argv.title, argv.body);
     }
   )
   .parse();
@@ -67,4 +65,4 @@ yargs(hideBin(process.argv))
 // yargs(hideBin(process.argv)).command("read", "Read your note", () => {
 //   console.log("Reading a note");
 // });
-// demandCommand(1).parse();
+// demandCommand(1).parse()
