@@ -1,3 +1,4 @@
+const chalk = require("chalk");
 const fs = require("fs");
 const getNotes = (name) => {
   return `${name} these are your notes...`;
@@ -24,11 +25,19 @@ const addNotes = (title, body) => {
 
 const removeNotes = (title) => {
   const notes = loadNotes();
+  const duplicates = notes.filter((note) => {
+    return note.title === title;
+  });
   const notesToKeep = notes.filter((note) => {
     return note.title !== title;
   });
-  saveNotes(notesToKeep);
-  console.log("Note deleted");
+
+  if (duplicates.length === 0) {
+    console.log(chalk.red("No notes found"));
+  } else {
+    saveNotes(notesToKeep);
+    console.log(chalk.green.bold("Note removed "));
+  }
 };
 const saveNotes = (notes) => {
   const dataJson = JSON.stringify(notes);
