@@ -17,9 +17,9 @@ const addNotes = (title, body) => {
     });
 
     saveNotes(notes);
-    console.log("New notes added");
+    console.log(chalk.blue.bold("New notes added"));
   } else {
-    console.log("Note title taken!");
+    console.log(chalk.red.bold("Note title taken!"));
   }
 };
 
