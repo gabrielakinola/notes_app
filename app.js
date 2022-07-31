@@ -64,6 +64,13 @@ yargs(hideBin(process.argv))
   )
   .parse();
 
+//listNotes
+yargs(hideBin(process.argv))
+  .command("list", "List all notes", () => {
+    notes.listNotes();
+  })
+  .parse();
+
 // yargs(hideBin(process.argv)).command("list", "List your note", () => {
 //   console.log("Listing out all notes");
 // });
