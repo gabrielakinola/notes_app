@@ -64,6 +64,19 @@ yargs(hideBin(process.argv))
   )
   .parse();
 
+yargs(hideBin(process.argv))
+  .command(
+    "read",
+    "Reading a note",
+    {
+      title: { describe: "Note title", demandOption: true, type: "string" },
+    },
+    (argv) => {
+      notes.readNote(argv.title);
+    }
+  )
+  .parse();
+
 //listNotes
 yargs(hideBin(process.argv))
   .command("list", "List all notes", () => {
