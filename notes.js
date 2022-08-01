@@ -65,6 +65,7 @@ const loadNotes = () => {
 const readNote = (title) => {
   const notes = loadNotes();
   const noteToRead = notes.find((note) => note.title === title);
+  debugger;
   if (noteToRead) {
     console.log(
       `title:${chalk.blue(noteToRead.title)}\nbody:${noteToRead.body}`
